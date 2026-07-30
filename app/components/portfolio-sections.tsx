@@ -4,7 +4,7 @@ import Reveal from "./reveal";
 const serviceCards = [
   {
     number: "01",
-    title: "Сайты",
+    title: "Современный сайт",
     text: "Собираю понятные цифровые витрины, которые помогают бизнесу выглядеть убедительно и вести к нужному действию.",
     points: ["Лендинги", "Корпоративные сайты", "Адаптивный интерфейс", "SEO-основа", "Высокая скорость загрузки"],
     accent: "text-[#625BFF]",
@@ -18,14 +18,14 @@ const serviceCards = [
   },
   {
     number: "03",
-    title: "Telegram-боты",
+    title: "Telegram-бот",
     text: "Проектирую ботов для заявок, записи и уведомлений с удобным сценарием для клиентов.",
     points: ["Приём заявок", "Запись клиентов", "Уведомления", "Интеграция с CRM", "Mini Apps"],
     accent: "text-[#1494c5]",
   },
   {
     number: "04",
-    title: "Веб-приложения",
+    title: "Веб-приложение",
     text: "Создаю рабочие интерфейсы для личных кабинетов, внутренних инструментов и первых версий продуктов.",
     points: ["Личные кабинеты", "Мини CRM", "Админ-панели", "Внутренние инструменты", "MVP-продукты"],
     accent: "text-[#8a63e8]",
@@ -68,30 +68,32 @@ export function SiteHeader() {
 
 export function HeroSection() {
   return (
-    <section id="top" className="relative isolate min-h-[760px] scroll-mt-20 overflow-hidden bg-[#F4F2ED] px-5 pb-20 pt-40 sm:px-8 sm:pb-28 sm:pt-48 lg:min-h-[820px] lg:pt-52">
+    <section id="top" data-hero-shell className="relative isolate min-h-[690px] scroll-mt-20 overflow-hidden bg-[#F4F2ED] px-5 pb-16 pt-32 sm:min-h-[720px] sm:px-8 sm:pb-20 sm:pt-36 lg:min-h-[680px] lg:pb-8 lg:pt-24">
       <div className="hero-blob hero-blob-purple pointer-events-none absolute -left-32 top-20 -z-0 h-72 w-72 rounded-full blur-3xl sm:h-96 sm:w-96" />
       <div className="hero-blob hero-blob-blue pointer-events-none absolute right-[-15%] top-16 -z-0 h-[520px] w-[520px] rounded-full blur-[110px]" />
       <div className="hero-blob hero-blob-coral pointer-events-none absolute bottom-[-20%] left-[38%] -z-0 h-80 w-80 rounded-full blur-[100px]" />
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] lg:gap-10">
+      <div className="relative z-10 mx-auto grid max-w-[1440px] items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(350px,0.75fr)] lg:gap-5">
         <Reveal>
           <p className="saint-eyebrow">Saint Web — сайты, AI и автоматизация</p>
-          <h1 className="mt-7 max-w-5xl text-[2.25rem] font-semibold leading-[0.99] tracking-[-0.065em] text-[#111111] sm:text-7xl lg:text-[clamp(4.5rem,7.2vw,7.6rem)]">
+          <h1 className="mt-6 max-w-5xl text-[2.25rem] font-semibold leading-[0.97] tracking-[-0.065em] text-[#111111] sm:text-7xl lg:mt-5 lg:leading-[0.92] lg:text-[clamp(3.9rem,4.6vw,5rem)]">
             Создаю сайты, <span className="whitespace-nowrap">веб-приложения</span> и <span className="whitespace-nowrap">AI-решения</span>, которые помогают бизнесу расти
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#71717A] sm:text-xl">Разрабатываю быстрые и удобные цифровые продукты — от лендингов и корпоративных сайтов до Telegram-ботов, CRM и AI-автоматизации.</p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#71717A] sm:text-xl lg:mt-4 lg:max-w-3xl">Разрабатываю быстрые и удобные цифровые продукты — от лендингов и корпоративных сайтов до Telegram-ботов, CRM и AI-автоматизации.</p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-6">
             <a href="#contact" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0C0C0E] px-6 py-3 text-sm font-semibold text-[#F7F6F2] shadow-xl shadow-[#0C0C0E]/15 transition-transform hover:-translate-y-1">Обсудить проект</a>
             <a href="#projects" className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#111111]/15 bg-white/35 px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-[#625BFF]/50 hover:bg-white/70">Посмотреть проекты</a>
           </div>
-          <div className="mt-12 flex max-w-xl flex-wrap gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#71717A] sm:mt-14 sm:gap-3">
+          <div className="mt-10 flex max-w-xl flex-wrap gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[#71717A] sm:mt-12 sm:gap-3 lg:mt-7">
             <span className="rounded-full border border-[#111111]/10 px-3 py-2">Современные сайты</span>
             <span className="rounded-full border border-[#111111]/10 px-3 py-2">AI-автоматизация</span>
             <span className="rounded-full border border-[#111111]/10 px-3 py-2">Telegram-боты</span>
             <span className="rounded-full border border-[#111111]/10 px-3 py-2">Веб-приложения</span>
           </div>
+          <p className="mt-5 flex items-center gap-2 text-sm text-[#71717A] lg:mt-3"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#625BFF] shadow-[0_0_0_4px_rgba(98,91,255,0.1)]" />Работаю удалённо с клиентами по всему миру</p>
         </Reveal>
         <HeroVisual />
       </div>
+      <div aria-hidden="true" className="hero-flow-route pointer-events-none absolute inset-x-[14%] bottom-5 hidden lg:block"><span className="hero-flow-route-line" /><span className="hero-flow-route-arrow">→</span></div>
     </section>
   );
 }
@@ -101,7 +103,7 @@ export function ServicesSection() {
     <section id="services" className="scroll-mt-20 bg-[#F4F2ED] px-5 py-24 sm:px-8 sm:py-32">
       <Reveal className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
-          <div><p className="saint-eyebrow">Что создаю</p><h2 className="saint-section-title mt-5 max-w-3xl">Цифровые продукты, которые помогают бизнесу работать проще.</h2></div>
+          <div><p className="saint-eyebrow">Что может получить ваш бизнес</p><h2 className="saint-section-title mt-5 max-w-3xl">Цифровые продукты, которые помогают бизнесу работать проще.</h2></div>
           <p className="max-w-sm text-sm leading-6 text-[#71717A]">От первой идеи до аккуратной рабочей версии, которую можно показывать людям и развивать дальше.</p>
         </div>
         <div className="mt-14 grid gap-4 md:grid-cols-2">
@@ -137,7 +139,7 @@ export function ProcessSection() {
     <section id="process" className="scroll-mt-20 bg-[#F4F2ED] px-5 py-24 sm:px-8 sm:py-28">
       <Reveal className="mx-auto max-w-7xl">
         <p className="saint-eyebrow">Как проходит работа</p><h2 className="saint-section-title mt-5 max-w-2xl">Понятный путь от задачи к запуску.</h2>
-        <div className="mt-12 grid gap-3 sm:grid-cols-5">{processSteps.map((step, index) => <div key={step} className="rounded-3xl border border-[#111111]/10 bg-white/45 p-5 transition-transform hover:-translate-y-1 sm:p-6"><span className="text-sm text-[#625BFF]">0{index + 1}</span><p className="mt-10 text-sm font-semibold leading-6 text-[#111111]">{step}</p></div>)}</div>
+        <div className="process-flow relative mt-12"><div aria-hidden="true" className="process-flow-line hidden sm:block" /><div className="relative grid gap-3 sm:grid-cols-5">{processSteps.map((step, index) => <div key={step} className="rounded-3xl border border-[#111111]/10 bg-white/45 p-5 transition-transform hover:-translate-y-1 sm:p-6"><span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#F4F2ED] text-sm text-[#625BFF] ring-1 ring-[#625BFF]/25">0{index + 1}</span><p className="mt-8 text-sm font-semibold leading-6 text-[#111111]">{step}</p></div>)}</div></div>
       </Reveal>
     </section>
   );

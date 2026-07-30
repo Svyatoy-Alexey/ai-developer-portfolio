@@ -34,7 +34,7 @@ body { background: var(--background); color: var(--foreground); font-family: Ari
 .saint-section-title { color: var(--foreground); font-size: clamp(2rem, 4.5vw, 4.25rem); font-weight: 600; letter-spacing: -0.055em; line-height: 1.03; }
 .saint-section-title-inverse { color: var(--saint-light); }
 
-.hero-blob { animation: saint-drift 24s ease-in-out infinite alternate; opacity: 0.48; }
+.hero-blob { animation: saint-drift 24s ease-in-out infinite alternate; opacity: 0.12; translate: var(--hero-bg-x, 0px) var(--hero-bg-y, 0px); will-change: translate; }
 .hero-blob-purple { background: #c8b6ff; }
 .hero-blob-blue { animation-delay: -8s; background: #8ed8ff; }
 .hero-blob-coral { animation-delay: -14s; background: #ff8178; }
@@ -45,12 +45,28 @@ body { background: var(--background); color: var(--foreground); font-family: Ari
 .hero-code { animation: saint-float 7s ease-in-out -2s infinite; }
 .hero-cursor { animation: saint-pulse 4s ease-in-out infinite; }
 .hero-dot { animation: saint-pulse 3.5s ease-in-out -1s infinite; }
-.hero-tag { animation: saint-tag-float 8s ease-in-out infinite; transform-origin: center; }
-.hero-tag-telegram { animation-delay: -2.5s; animation-duration: 9.5s; }
-.hero-tag-crm { animation-delay: -5s; animation-duration: 7.2s; }
-.hero-tag-website { animation-delay: -1.5s; animation-duration: 10.5s; }
+.hero-tag { animation: saint-tag-float 8s ease-in-out infinite; transform-origin: center; translate: var(--tag-x, 0px) var(--tag-y, 0px); }
+.hero-tag-automation { animation-delay: -2.5s; animation-duration: 9.5s; }
+.hero-tag-api { animation-delay: -5s; animation-duration: 7.2s; }
+
+.hero-network { z-index: 20; translate: var(--network-x, 0px) var(--network-y, 0px); }
+.hero-network-node { border: 1px solid rgb(17 17 17 / 0.12); border-radius: 999px; background: rgb(247 246 242 / 0.72); box-shadow: 0 12px 28px -18px rgb(17 17 17 / 0.55); color: rgb(17 17 17 / 0.72); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.48rem 0.7rem; white-space: nowrap; }
+.hero-network-node-telegram { background: rgb(142 216 255 / 0.82); border-color: transparent; color: var(--saint-dark); }
+.hero-network-line { background: linear-gradient(90deg, rgb(98 91 255 / 0.1), rgb(142 216 255 / 0.68), rgb(255 129 120 / 0.2)); height: 1px; opacity: 0.65; transform-origin: left center; }
+.hero-network-line::after { border-color: transparent transparent transparent rgb(98 91 255 / 0.55); border-style: solid; border-width: 3px 0 3px 5px; content: ""; position: absolute; right: -4px; top: -2.5px; }
+.hero-network-line-website { left: 17%; top: 49%; transform: rotate(-9deg); width: 30%; }
+.hero-network-line-telegram { left: 52%; top: 42%; transform: rotate(-19deg); width: 29%; }
+.hero-network-line-crm { left: 54%; top: 57%; transform: rotate(24deg); width: 27%; }
+.hero-network-line-openai { left: 19%; top: 67%; transform: rotate(-17deg); width: 36%; }
 
 .hero-grid { background-image: linear-gradient(rgb(98 91 255 / 0.12) 1px, transparent 1px), linear-gradient(90deg, rgb(98 91 255 / 0.12) 1px, transparent 1px); background-size: 28px 28px; mask-image: radial-gradient(circle at center, black 20%, transparent 74%); }
+
+.hero-flow-route { height: 1px; opacity: 0.45; }
+.hero-flow-route-line, .process-flow-line, .contact-flow-route-line { background: linear-gradient(90deg, transparent, rgb(98 91 255 / 0.45), rgb(142 216 255 / 0.62), transparent); display: block; height: 1px; }
+.hero-flow-route-arrow, .contact-flow-route-arrow { color: rgb(98 91 255 / 0.6); font-size: 0.8rem; position: absolute; right: 0; top: -0.6rem; }
+.process-flow-line { left: 5%; position: absolute; right: 5%; top: 1.35rem; }
+.contact-flow-route { height: 1px; opacity: 0.4; }
+.contact-flow-route-arrow { color: rgb(142 216 255 / 0.68); }
 
 .saint-reveal-ready { opacity: 0; transform: translate3d(0, 18px, 0); transition: opacity 700ms ease, transform 700ms ease; }
 .saint-reveal-ready.saint-reveal-visible { opacity: 1; transform: translate3d(0, 0, 0); }
@@ -84,14 +100,19 @@ body { background: var(--background); color: var(--foreground); font-family: Ari
   .hero-visual { transform: none; }
   .hero-browser { animation-duration: 12s; }
   .hero-orbit { animation-duration: 34s; }
-  .hero-tag-crm, .hero-tag-website { display: none; }
+  .hero-network-node-crm, .hero-network-node-openai, .hero-network-line-crm, .hero-network-line-openai, .hero-network-core { display: none; }
+  .hero-network-line-website { left: 18%; top: 50%; transform: rotate(-5deg); width: 29%; }
+  .hero-network-line-telegram { left: 53%; top: 39%; transform: rotate(-17deg); width: 27%; }
   .hero-tag { animation-duration: 14s; }
   .hero-blob { animation-duration: 36s; }
+  .hero-flow-route, .contact-flow-route { display: none; }
+  .process-flow-line { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
   .hero-visual { transform: none !important; }
+  .hero-blob, .hero-network, .hero-tag { translate: none; }
   .saint-reveal-ready { opacity: 1; transform: none; }
 }

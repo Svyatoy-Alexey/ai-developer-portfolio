@@ -24,7 +24,8 @@ export default function Home() {
         <ProjectsSection />
         <WhySection />
         <TechnologiesSection />
-        <section id="contact" className="scroll-mt-20 bg-[#0C0C0E] px-5 py-24 text-[#F7F6F2] sm:px-8 sm:py-32">
+        <section id="contact" className="relative scroll-mt-20 overflow-hidden bg-[#0C0C0E] px-5 py-24 text-[#F7F6F2] sm:px-8 sm:py-32">
+          <div aria-hidden="true" className="contact-flow-route pointer-events-none absolute left-[10%] right-[10%] top-16 hidden lg:block"><span className="contact-flow-route-line" /><span className="contact-flow-route-arrow">→</span></div>
           <div className="mx-auto grid min-w-0 max-w-7xl gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] lg:gap-20">
             <div className="lg:pt-5">
               <p className="saint-eyebrow saint-eyebrow-inverse">Контакты</p>
