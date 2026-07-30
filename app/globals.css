@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070910;
-  --foreground: #f4f7fb;
+  --background: #f4f2ed;
+  --foreground: #111111;
+  --saint-light: #f7f6f2;
+  --saint-dark: #0c0c0e;
+  --saint-muted: #71717a;
+  --saint-purple: #625bff;
+  --saint-coral: #ff665a;
+  --saint-blue: #8ed8ff;
+  --saint-lilac: #c8b6ff;
 }
 
 @theme inline {
@@ -20,33 +27,128 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: rgb(103 232 249 / 0.25);
-  color: #ffffff;
+  background: rgb(98 91 255 / 0.22);
+  color: #111111;
 }
 
 :where(a, button, input, textarea, select):focus-visible {
-  outline: 2px solid #67e8f9;
+  outline: 2px solid var(--saint-purple);
   outline-offset: 3px;
 }
 
-@layer components {
-  .eyebrow {
-    color: rgb(103 232 249);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.24em;
-    line-height: 1.5;
-    text-transform: uppercase;
+.saint-gradient {
+  background: linear-gradient(120deg, #625bff 0%, #9c7cff 35%, #8ed8ff 68%, #ff8178 100%);
+}
+
+.saint-eyebrow {
+  color: var(--saint-purple);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.saint-eyebrow-inverse {
+  color: var(--saint-lilac);
+}
+
+.saint-section-title {
+  color: var(--foreground);
+  font-size: clamp(2rem, 4.5vw, 4.25rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 1.03;
+}
+
+.saint-section-title-inverse {
+  color: var(--saint-light);
+}
+
+.hero-visual {
+  transform: translate3d(var(--mouse-x, 0px), calc(var(--mouse-y, 0px) - var(--scroll-y, 0px)), 0);
+  will-change: transform;
+}
+
+.hero-browser {
+  animation: saint-float 9s ease-in-out infinite;
+  transform: rotate(3deg);
+}
+
+.hero-orbit {
+  animation: saint-spin 24s linear infinite;
+}
+
+.hero-code {
+  animation: saint-float 7s ease-in-out -2s infinite;
+}
+
+.hero-telegram {
+  animation: saint-float 6s ease-in-out -1s infinite;
+}
+
+.hero-cursor {
+  animation: saint-pulse 4s ease-in-out infinite;
+}
+
+.hero-dot {
+  animation: saint-pulse 3.5s ease-in-out -1s infinite;
+}
+
+.hero-grid {
+  background-image: linear-gradient(rgb(98 91 255 / 0.12) 1px, transparent 1px), linear-gradient(90deg, rgb(98 91 255 / 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black 20%, transparent 74%);
+}
+
+@keyframes saint-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(3deg); }
+  50% { transform: translate3d(0, -12px, 0) rotate(1deg); }
+}
+
+@keyframes saint-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes saint-pulse {
+  0%, 100% { opacity: 0.72; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@media (max-width: 767px) {
+  .hero-visual {
+    transform: none;
   }
 
-  .section-title {
-    color: #ffffff;
-    font-size: clamp(1.875rem, 4vw, 3.25rem);
-    font-weight: 600;
-    letter-spacing: -0.035em;
-    line-height: 1.08;
+  .hero-browser {
+    animation-duration: 12s;
+  }
+
+  .hero-orbit {
+    animation-duration: 34s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-visual {
+    transform: none !important;
   }
 }

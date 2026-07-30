@@ -1,31 +1,35 @@
+import HeroVisual from "./hero-visual";
+
 const services = [
-  { number: "01", title: "Разработка сайтов", text: "Одностраничные сайты и небольшие интерфейсы, которые понятно рассказывают о продукте." },
-  { number: "02", title: "Telegram-боты", text: "Боты для заявок, записи клиентов, уведомлений и простых сценариев поддержки." },
-  { number: "03", title: "AI-автоматизация", text: "Практичные сценарии с AI для обработки текста, рутины и внутренних процессов." },
-  { number: "04", title: "Небольшие веб-приложения", text: "Мини-сервисы и рабочие кабинеты под конкретную задачу бизнеса." },
+  { number: "01", title: "Разработка сайтов", text: "Собираю быстрые сайты, которые ясно рассказывают о продукте и ведут к нужному действию." },
+  { number: "02", title: "Лендинги", text: "Проектирую выразительные одностраничные решения для запуска, проверки идеи или кампании." },
+  { number: "03", title: "Веб-приложения", text: "Создаю удобные интерфейсы для рабочих процессов, внутренних сервисов и цифровых продуктов." },
+  { number: "04", title: "Telegram-боты", text: "Автоматизирую заявки, запись клиентов, уведомления и повторяющиеся сценарии в Telegram." },
+  { number: "05", title: "AI-автоматизация", text: "Помогаю встроить AI в понятные процессы: обработку текста, поиск, поддержку и рутину." },
+  { number: "06", title: "Мини CRM-системы", text: "Собираю компактные рабочие кабинеты для статусов, заявок и ежедневных задач команды." },
 ];
 
 const projects = [
-  { type: "Учебный проект", title: "Лендинг AI Automation Studio", text: "Концепция промо-страницы студии, которая показывает услуги и собирает первичные обращения.", stack: "Next.js · TypeScript · Tailwind CSS" },
-  { type: "Концептуальный проект", title: "Система обработки заявок", text: "Демонстрация интерфейса для сортировки, статусов и маршрутизации входящих запросов.", stack: "Next.js · TypeScript · Supabase" },
-  { type: "Учебный проект", title: "Telegram-бот для записи клиентов", text: "Сценарий бота для выбора услуги, даты и времени с уведомлением администратора.", stack: "Node.js · Telegram API · n8n" },
+  { type: "Учебный проект", title: "Saint Web portfolio", text: "Концепция продуктового портфолио для независимого веб-разработчика и AI-интегратора.", stack: "Next.js · TypeScript · Tailwind CSS", tone: "from-[#625BFF] to-[#8ED8FF]" },
+  { type: "Концептуальный проект", title: "Система обработки заявок", text: "Демонстрация интерфейса для сортировки, статусов и маршрутизации входящих запросов.", stack: "Next.js · React · Supabase", tone: "from-[#FF665A] to-[#C8B6FF]" },
+  { type: "Учебный проект", title: "Telegram-бот для записи", text: "Сценарий бота для выбора услуги, даты и времени с понятным пользовательским потоком.", stack: "Node.js · n8n · Telegram API", tone: "from-[#8ED8FF] to-[#625BFF]" },
 ];
 
-const technologies = ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "OpenAI API", "n8n", "Supabase"];
+const technologies = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Supabase", "OpenAI API", "n8n"];
 const processSteps = ["Обсуждение задачи", "Прототип", "Разработка", "Проверка", "Запуск"];
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-white/[0.06]">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-4 px-5 py-5 sm:px-8">
-        <a href="#top" className="text-base font-semibold tracking-tight text-white sm:text-lg">AI Developer</a>
-        <nav aria-label="Основная навигация" className="order-3 flex w-full items-center justify-between gap-3 text-xs text-zinc-400 sm:gap-5 sm:text-sm md:order-none md:w-auto md:justify-end md:gap-7">
-          <a href="#about" className="transition hover:text-white">Обо мне</a>
-          <a href="#services" className="transition hover:text-white">Услуги</a>
-          <a href="#projects" className="transition hover:text-white">Проекты</a>
-          <a href="#contact" className="transition hover:text-white">Контакты</a>
+    <header className="absolute inset-x-0 top-0 z-30">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-5 gap-y-4 px-5 py-5 sm:px-8 sm:py-7">
+        <a href="#top" className="text-lg font-semibold tracking-[-0.04em] text-[#111111] sm:text-xl">Saint Web</a>
+        <nav aria-label="Основная навигация" className="order-3 flex w-full items-center justify-between gap-3 text-xs text-[#71717A] sm:gap-5 sm:text-sm md:order-none md:w-auto md:justify-end md:gap-7">
+          <a href="#about" className="transition-colors hover:text-[#111111]">Обо мне</a>
+          <a href="#services" className="transition-colors hover:text-[#111111]">Услуги</a>
+          <a href="#projects" className="transition-colors hover:text-[#111111]">Проекты</a>
+          <a href="#contact" className="transition-colors hover:text-[#111111]">Контакты</a>
         </nav>
-        <a href="#contact" className="rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-white transition hover:border-cyan-300/50 hover:bg-cyan-300/10">Связаться</a>
+        <a href="#contact" className="rounded-full bg-[#0C0C0E] px-4 py-2.5 text-sm font-semibold text-[#F7F6F2] transition-transform hover:-translate-y-0.5 sm:px-5">Обсудить проект</a>
       </div>
     </header>
   );
@@ -33,23 +37,21 @@ export function SiteHeader() {
 
 export function HeroSection() {
   return (
-    <section id="top" className="relative scroll-mt-24 px-5 pb-24 pt-20 sm:px-8 sm:pb-32 sm:pt-28 lg:pt-36">
-      <div className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[120px]" />
-      <div className="relative z-10 mx-auto grid max-w-7xl items-end gap-14 lg:grid-cols-[minmax(0,1fr)_340px]">
+    <section id="top" className="relative isolate min-h-[760px] scroll-mt-20 overflow-hidden bg-[#F4F2ED] px-5 pb-20 pt-40 sm:px-8 sm:pb-28 sm:pt-48 lg:min-h-[820px] lg:pt-52">
+      <div className="pointer-events-none absolute -left-32 top-20 -z-0 h-72 w-72 rounded-full bg-[#C8B6FF]/45 blur-3xl sm:h-96 sm:w-96" />
+      <div className="pointer-events-none absolute right-[-15%] top-16 -z-0 h-[520px] w-[520px] rounded-full bg-[#8ED8FF]/35 blur-[110px]" />
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] lg:gap-10">
         <div>
-          <p className="eyebrow">AI · web · automation</p>
-          <h1 className="mt-7 max-w-4xl text-4xl font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">Создаю сайты, AI-автоматизации и Telegram-ботов для бизнеса</h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-400 sm:text-xl">Помогаю малому бизнесу автоматизировать процессы и запускать цифровые продукты.</p>
+          <p className="saint-eyebrow">Saint Web · digital products</p>
+          <h1 className="mt-7 max-w-5xl text-5xl font-semibold leading-[0.98] tracking-[-0.065em] text-[#111111] sm:text-7xl lg:text-[clamp(4.5rem,7.2vw,7.6rem)]">Создаю сайты, веб-приложения и AI-решения, которые помогают бизнесу расти</h1>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#71717A] sm:text-xl">Разрабатываю быстрые и удобные цифровые продукты — от лендингов и корпоративных сайтов до Telegram-ботов, CRM и AI-автоматизации.</p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a href="#contact" className="inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-[#061017] shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300">Обсудить проект</a>
-            <a href="#projects" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/[0.08]">Посмотреть работы</a>
+            <a href="#contact" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#0C0C0E] px-6 py-3 text-sm font-semibold text-[#F7F6F2] shadow-xl shadow-[#0C0C0E]/15 transition-transform hover:-translate-y-1">Обсудить проект</a>
+            <a href="#projects" className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#111111]/15 bg-white/35 px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-[#625BFF]/50 hover:bg-white/70">Посмотреть работы</a>
           </div>
+          <div className="mt-14 flex flex-wrap gap-2 text-xs font-medium uppercase tracking-[0.2em] text-[#71717A] sm:gap-3"><span className="rounded-full border border-[#111111]/10 px-3 py-2">web</span><span className="rounded-full border border-[#111111]/10 px-3 py-2">apps</span><span className="rounded-full border border-[#111111]/10 px-3 py-2">AI</span><span className="rounded-full border border-[#111111]/10 px-3 py-2">Telegram</span></div>
         </div>
-        <div className="grid gap-3 text-sm text-zinc-400 sm:grid-cols-3 lg:grid-cols-1">
-          {["Собираю понятные интерфейсы", "Изучаю AI-инструменты на практике", "Делаю решения под задачу"].map((item, index) => (
-            <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"><span className="text-cyan-300">0{index + 1}</span><p className="mt-3 leading-6 text-zinc-300">{item}</p></div>
-          ))}
-        </div>
+        <HeroVisual />
       </div>
     </section>
   );
@@ -57,39 +59,40 @@ export function HeroSection() {
 
 export function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-24 border-y border-white/[0.06] bg-white/[0.02] px-5 py-20 sm:px-8 sm:py-24">
-      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-        <p className="eyebrow">Обо мне</p>
-        <div><h2 className="section-title max-w-3xl">Начинающий AI-разработчик, которому важно делать полезные вещи.</h2><p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">Использую современные AI-инструменты, чтобы быстрее исследовать идеи, собирать прототипы и создавать практичные решения для бизнеса. Сейчас развиваю навыки в веб-разработке, автоматизации и интеграциях.</p></div>
-      </div>
-    </section>
+    <section id="about" className="scroll-mt-20 bg-[#0C0C0E] px-5 py-24 text-[#F7F6F2] sm:px-8 sm:py-32"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.6fr_1.4fr] lg:gap-24"><p className="saint-eyebrow saint-eyebrow-inverse">Обо мне</p><div className="max-w-4xl"><h2 className="saint-section-title saint-section-title-inverse">Привет! Меня зовут Алексей.</h2><div className="mt-8 grid gap-5 text-base leading-8 text-white/65 sm:text-lg"><p>Я независимый веб-разработчик и создатель цифровых решений под названием Saint Web.</p><p>Помогаю предпринимателям и компаниям запускать современные сайты, веб-приложения, Telegram-ботов и AI-автоматизацию, которые упрощают работу, экономят время и помогают развивать бизнес.</p><p>Использую современные технологии и уделяю внимание скорости, удобству использования и качеству реализации каждого проекта.</p><p>Моя цель — создавать решения, которые приносят реальную пользу, а не просто выглядят красиво.</p></div></div></div></section>
   );
 }
 
 export function ServicesSection() {
   return (
-    <section id="services" className="scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32"><div className="mx-auto max-w-7xl"><p className="eyebrow">Услуги</p><div className="mt-4 flex flex-col justify-between gap-6 sm:flex-row sm:items-end"><h2 className="section-title max-w-2xl">Цифровые решения без лишней сложности.</h2><p className="max-w-sm text-sm leading-6 text-zinc-400">Выбираю понятный объём для первой версии и оставляю пространство для роста.</p></div><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{services.map((service) => <article key={service.title} className="group rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.06]"><span className="text-sm text-cyan-300">{service.number}</span><h3 className="mt-12 text-xl font-semibold text-white">{service.title}</h3><p className="mt-4 text-sm leading-6 text-zinc-400">{service.text}</p></article>)}</div></div></section>
+    <section id="services" className="scroll-mt-20 bg-[#F4F2ED] px-5 py-24 sm:px-8 sm:py-32"><div className="mx-auto max-w-7xl"><div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end"><div><p className="saint-eyebrow">Услуги</p><h2 className="saint-section-title mt-5 max-w-3xl">Собираю цифровые продукты под реальную задачу.</h2></div><p className="max-w-sm text-sm leading-6 text-[#71717A]">От первой идеи до аккуратной рабочей версии, которую можно показывать людям и развивать дальше.</p></div><div className="mt-14 grid gap-px overflow-hidden rounded-[2rem] border border-[#111111]/10 bg-[#111111]/10 sm:grid-cols-2 lg:grid-cols-3">{services.map((service) => <article key={service.title} className="group min-w-0 bg-[#F4F2ED] p-7 transition-colors hover:bg-white sm:p-8"><span className="text-sm font-medium text-[#625BFF]">{service.number}</span><h3 className="mt-14 text-xl font-semibold tracking-[-0.03em] text-[#111111]">{service.title}</h3><p className="mt-4 text-sm leading-6 text-[#71717A]">{service.text}</p><span className="mt-8 block h-1 w-10 rounded-full bg-gradient-to-r from-[#625BFF] via-[#8ED8FF] to-[#FF665A] transition-all duration-500 group-hover:w-20" /></article>)}</div></div></section>
   );
 }
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="scroll-mt-24 border-y border-white/[0.06] bg-white/[0.02] px-5 py-24 sm:px-8 sm:py-32"><div className="mx-auto max-w-7xl"><p className="eyebrow">Проекты</p><h2 className="section-title mt-4 max-w-3xl">Учебные и концептуальные работы.</h2><p className="mt-5 max-w-2xl text-base leading-7 text-zinc-400">Примеры ниже показывают подход к задачам и интерфейсам. Это демонстрационные проекты, а не кейсы реальных клиентов.</p><div className="mt-12 grid gap-5 lg:grid-cols-3">{projects.map((project) => <article key={project.title} className="flex flex-col rounded-3xl border border-white/10 bg-[#0b0f18] p-6 transition hover:-translate-y-1 hover:border-cyan-300/30"><div className="flex items-center justify-between gap-4"><span className="rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-200">{project.type}</span><span className="text-zinc-600">↗</span></div><h3 className="mt-8 text-xl font-semibold text-white">{project.title}</h3><p className="mt-4 flex-1 text-sm leading-6 text-zinc-400">{project.text}</p><p className="mt-7 border-t border-white/10 pt-5 text-xs leading-5 text-zinc-400">{project.stack}</p><a href="#contact" className="mt-6 inline-flex items-center text-sm font-semibold text-cyan-300 transition hover:text-cyan-200">Подробнее <span className="ml-2">→</span></a></article>)}</div></div></section>
+    <section id="projects" className="scroll-mt-20 bg-[#F4F2ED] px-5 pb-24 sm:px-8 sm:pb-32"><div className="mx-auto max-w-7xl"><p className="saint-eyebrow">Работы</p><h2 className="saint-section-title mt-5 max-w-3xl">Учебные и концептуальные проекты.</h2><p className="mt-6 max-w-2xl text-base leading-7 text-[#71717A]">Примеры показывают подход к задачам и интерфейсам. Это демонстрационные работы, а не кейсы реальных клиентов.</p><div className="mt-14 grid gap-5 lg:grid-cols-3">{projects.map((project) => <article key={project.title} className="group flex min-w-0 flex-col overflow-hidden rounded-[2rem] border border-[#111111]/10 bg-white/55 transition-transform hover:-translate-y-1"><div className={`relative h-40 overflow-hidden bg-gradient-to-br ${project.tone}`}><div className="absolute inset-5 rounded-2xl border border-white/40 bg-[#0C0C0E]/80 p-5 shadow-2xl transition-transform duration-700 group-hover:scale-105"><div className="flex gap-1.5"><span className="h-2 w-2 rounded-full bg-[#FF665A]" /><span className="h-2 w-2 rounded-full bg-[#F4F2ED]" /><span className="h-2 w-2 rounded-full bg-[#8ED8FF]" /></div><div className="mt-6 h-2 w-2/3 rounded-full bg-white/60" /><div className="mt-3 h-2 w-1/2 rounded-full bg-white/20" /></div></div><div className="flex flex-1 flex-col p-7 sm:p-8"><span className="w-fit rounded-full bg-[#625BFF]/10 px-3 py-1 text-xs font-medium text-[#625BFF]">{project.type}</span><h3 className="mt-7 text-xl font-semibold tracking-[-0.03em] text-[#111111]">{project.title}</h3><p className="mt-4 flex-1 text-sm leading-6 text-[#71717A]">{project.text}</p><p className="mt-7 border-t border-[#111111]/10 pt-5 text-xs leading-5 text-[#71717A]">{project.stack}</p><a href="#contact" className="mt-6 inline-flex items-center text-sm font-semibold text-[#625BFF] transition-colors hover:text-[#FF665A]">Подробнее <span className="ml-2 transition-transform group-hover:translate-x-1">→</span></a></div></article>)}</div></div></section>
   );
 }
 
 export function TechnologiesSection() {
   return (
-    <section className="px-5 py-24 sm:px-8 sm:py-32"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20"><div><p className="eyebrow">Технологии</p><h2 className="section-title mt-4 max-w-lg">Инструменты, которые изучаю и применяю в проектах.</h2></div><div className="flex flex-wrap content-start gap-3">{technologies.map((technology) => <span key={technology} className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm text-zinc-200">{technology}</span>)}</div></div></section>
+    <section className="bg-[#0C0C0E] px-5 py-24 text-[#F7F6F2] sm:px-8 sm:py-32"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24"><div><p className="saint-eyebrow saint-eyebrow-inverse">Технологии</p><h2 className="saint-section-title saint-section-title-inverse mt-5 max-w-xl">Инструменты, которые изучаю и применяю в проектах.</h2></div><div className="flex flex-wrap content-start gap-3">{technologies.map((technology, index) => <span key={technology} className={`rounded-full border px-5 py-3 text-sm transition-transform hover:-translate-y-1 ${index % 3 === 0 ? "border-[#C8B6FF]/40 text-[#C8B6FF]" : index % 3 === 1 ? "border-[#8ED8FF]/40 text-[#8ED8FF]" : "border-[#FF8178]/40 text-[#FF8178]"}`}>{technology}</span>)}</div></div></section>
   );
 }
 
 export function ProcessSection() {
   return (
-    <section className="border-y border-white/[0.06] bg-white/[0.02] px-5 py-24 sm:px-8 sm:py-28"><div className="mx-auto max-w-7xl"><p className="eyebrow">Этапы работы</p><div className="mt-10 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-5">{processSteps.map((step, index) => <div key={step} className="bg-[#0b0f18] p-6"><span className="text-sm text-cyan-300">0{index + 1}</span><p className="mt-10 text-sm font-medium leading-6 text-white">{step}</p></div>)}</div></div></section>
+    <section className="bg-[#F4F2ED] px-5 py-24 sm:px-8 sm:py-28"><div className="mx-auto max-w-7xl"><p className="saint-eyebrow">Этапы работы</p><h2 className="saint-section-title mt-5 max-w-2xl">Понятный процесс без лишнего шума.</h2><div className="mt-12 grid gap-3 sm:grid-cols-5">{processSteps.map((step, index) => <div key={step} className="rounded-3xl border border-[#111111]/10 bg-white/45 p-5 transition-transform hover:-translate-y-1 sm:p-6"><span className="text-sm text-[#625BFF]">0{index + 1}</span><p className="mt-10 text-sm font-semibold leading-6 text-[#111111]">{step}</p></div>)}</div></div></section>
+  );
+}
+
+export function ContactMethods() {
+  return (
+    <div className="mt-10 grid gap-3 sm:grid-cols-3 lg:grid-cols-1"><span className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"><span className="block text-sm font-semibold text-white">Telegram</span><span className="mt-2 block text-xs leading-5 text-white/45">Реквизиты добавим после получения username.</span></span><span className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"><span className="block text-sm font-semibold text-white">Email</span><span className="mt-2 block text-xs leading-5 text-white/45">Адрес для связи будет добавлен отдельно.</span></span><a href="https://github.com/Svyatoy-Alexey/ai-developer-portfolio" target="_blank" rel="noreferrer" className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-colors hover:border-[#8ED8FF]/50"><span className="block text-sm font-semibold text-white">GitHub</span><span className="mt-2 block break-all text-xs leading-5 text-white/45">Svyatoy-Alexey/ai-developer-portfolio ↗</span></a></div>
   );
 }
 
 export function SiteFooter() {
-  return <footer className="px-5 py-8 sm:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} AI Developer</p><a href="#top" className="transition hover:text-white">В начало ↑</a></div></footer>;
+  return <footer className="border-t border-white/10 bg-[#0C0C0E] px-5 py-8 text-[#F7F6F2] sm:px-8"><div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} Saint Web</p><p>Работаю удалённо по всему миру</p><a href="#top" className="transition-colors hover:text-white">В начало ↑</a></div></footer>;
 }
