@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #070910;
+  --foreground: #f4f7fb;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: rgb(103 232 249 / 0.25);
+  color: #ffffff;
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+@layer components {
+  .eyebrow {
+    color: rgb(103 232 249);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    color: #ffffff;
+    font-size: clamp(1.875rem, 4vw, 3.25rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+  }
 }
