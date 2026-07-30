@@ -36,7 +36,7 @@ export default function HeroVisual() {
     };
 
     const handlePointerMove = (event: PointerEvent) => {
-      if (reducedMotion || window.innerWidth < 768) return;
+      if (reducedMotion || window.innerWidth < 768 || !window.matchMedia("(pointer: fine)").matches) return;
       const bounds = visual.getBoundingClientRect();
       pointerX = (event.clientX - (bounds.left + bounds.width / 2)) * 0.035;
       pointerY = (event.clientY - (bounds.top + bounds.height / 2)) * 0.035;
@@ -64,6 +64,7 @@ export default function HeroVisual() {
         frame = 0;
         visual.style.setProperty("--mouse-x", "0px");
         visual.style.setProperty("--mouse-y", "0px");
+        visual.style.setProperty("--scroll-y", "0px");
       } else {
         scheduleRender();
       }
@@ -91,8 +92,11 @@ export default function HeroVisual() {
         <div className="flex items-center gap-1.5 border-b border-white/10 pb-3"><span className="h-2 w-2 rounded-full bg-[#FF665A]" /><span className="h-2 w-2 rounded-full bg-[#F4F2ED]" /><span className="h-2 w-2 rounded-full bg-[#8ED8FF]" /><span className="ml-3 h-2 w-2/5 rounded-full bg-white/10" /></div>
         <div className="grid grid-cols-[1fr_1.25fr] gap-3 p-4 sm:gap-5 sm:p-7"><div><div className="h-2 w-16 rounded-full bg-[#C8B6FF]" /><div className="mt-5 h-6 w-full rounded-lg bg-white/90" /><div className="mt-2 h-6 w-4/5 rounded-lg bg-white/70" /><div className="mt-5 h-2 w-full rounded-full bg-white/15" /><div className="mt-2 h-2 w-3/4 rounded-full bg-white/10" /><div className="mt-7 h-8 w-24 rounded-full bg-gradient-to-r from-[#625BFF] to-[#8ED8FF]" /></div><div className="rounded-xl border border-white/10 bg-white/[0.04] p-3 sm:p-4"><div className="flex items-end gap-1.5"><span className="h-12 w-1/5 rounded-t bg-[#625BFF]" /><span className="h-20 w-1/5 rounded-t bg-[#8ED8FF]" /><span className="h-16 w-1/5 rounded-t bg-[#C8B6FF]" /><span className="h-28 w-1/5 rounded-t bg-[#FF665A]" /><span className="h-24 w-1/5 rounded-t bg-white/80" /></div><div className="mt-4 h-2 w-2/3 rounded-full bg-white/20" /></div></div>
       </div>
+      <span className="hero-tag hero-tag-openai absolute left-0 top-[24%] rounded-full border border-white/60 bg-white/75 px-4 py-2 text-xs font-semibold text-[#111111] shadow-lg backdrop-blur sm:left-[-2%]">OpenAI</span>
+      <span className="hero-tag hero-tag-telegram absolute right-0 top-[18%] rounded-full bg-[#8ED8FF] px-4 py-2 text-xs font-semibold text-[#0C0C0E] shadow-lg sm:right-[-2%]">Telegram</span>
+      <span className="hero-tag hero-tag-crm absolute bottom-[24%] right-[2%] rounded-full border border-white/60 bg-white/75 px-4 py-2 text-xs font-semibold text-[#111111] shadow-lg backdrop-blur sm:right-[-3%]">CRM</span>
+      <span className="hero-tag hero-tag-website absolute bottom-[12%] left-[17%] rounded-full bg-[#FF8178] px-4 py-2 text-xs font-semibold text-[#0C0C0E] shadow-lg">Website</span>
       <div className="hero-code absolute bottom-[16%] left-[3%] rounded-2xl border border-[#111111]/10 bg-white/70 px-4 py-3 font-mono text-sm text-[#625BFF] shadow-xl backdrop-blur sm:bottom-[13%] sm:left-[2%] sm:px-5 sm:py-4">{"{ }"}<span className="ml-2 text-[#111111]/65">build / launch</span></div>
-      <div className="hero-telegram absolute right-[4%] top-[8%] rounded-2xl bg-[#8ED8FF] px-4 py-3 text-xl font-semibold text-[#0C0C0E] shadow-xl sm:right-[1%] sm:px-5 sm:py-4">@</div>
       <div className="hero-cursor absolute bottom-[10%] right-[9%] text-5xl text-[#FF665A] drop-shadow-lg sm:bottom-[12%] sm:right-[8%]">↗</div>
       <div className="hero-dot absolute left-[18%] top-[7%] h-3 w-3 rounded-full bg-[#FF665A] shadow-[0_0_30px_8px_rgba(255,102,90,0.3)] sm:left-[20%]" />
     </div>
